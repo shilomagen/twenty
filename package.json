@@ -361,7 +361,9 @@
   "version": "0.2.1",
   "nx": {},
   "scripts": {
-    "start": "npx concurrently --kill-others 'npx nx run-many -t start -p twenty-server twenty-front' 'npx wait-on tcp:3000 && npx nx run twenty-server:worker'"
+    "start": "npx concurrently --kill-others 'npx nx run-many -t start -p twenty-server twenty-front' 'npx wait-on tcp:3000 && npx nx run twenty-server:worker'",
+    "start:infra:dev": "docker compose -f docker-compose.dev.yml up -d",
+    "stop:infra:dev": "docker compose -f docker-compose.dev.yml down"
   },
   "workspaces": {
     "packages": [
